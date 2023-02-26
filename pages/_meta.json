@@ -2,6 +2,7 @@
   "index": "Introduction",
   "paper": "White Paper",
   "modules": "Modules",
+  "apis": "API",
   "about": {
     "title": "About",
     "type": "page"
