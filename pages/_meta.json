@@ -3,8 +3,14 @@
   "paper": "White Paper",
   "modules": "Modules",
   "apis": "API",
+  "documentation": {
+    "title": "Explore Documentation",
+    "href": "https://shifa.btc.us",
+    "type": "page"
+  },
   "team": {
     "title": "Meet the Team",
-    "type": "page"
+    "type": "page",
+    "newWindow": true
   }
 }
