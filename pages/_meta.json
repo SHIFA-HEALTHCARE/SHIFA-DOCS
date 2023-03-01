@@ -3,14 +3,8 @@
   "paper": "White Paper",
   "modules": "Modules",
   "apis": "API",
-  "about": {
-    "title": "About",
+  "team": {
+    "title": "Meet the Team",
     "type": "page"
-  },
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "mailto:shifa.btc@gmail.com",
-    "newWindow": true
   }
 }

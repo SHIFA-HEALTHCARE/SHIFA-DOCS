@@ -14,7 +14,7 @@ const config: DocsThemeConfig = {
       titleTemplate: '%s'
     }
   },
-  logo: <span>SHIFA</span>,
+  logo: <span style={{fontFamily: "fantasy", fontSize: "30px", letterSpacing: "1px"}}>SHIFA</span>,
   project: {
     link: 'https://github.com/SHIFA-HEALTHCARE',
   },
