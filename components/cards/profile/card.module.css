@@ -1,0 +1,35 @@
+.card {
+  padding: 20px;
+}
+
+.title {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.address {
+  font-size: 20px;
+}
+
+.email {
+  font-size: 16px;
+}
+
+.avatar {
+  width: 140px;
+  margin: auto;
+}
+
+.avatar img {
+  border: solid 6px transparent;
+  border-radius: 50%;
+}
+
+.avatar img:hover {
+  border-color: gray
+}
+
+.btn {
+  border-radius: 25px;
+}

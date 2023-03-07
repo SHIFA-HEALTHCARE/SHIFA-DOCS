@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Get Appointments",
+        "description": "Retreives gfghfkj",
+        "query": [
+            "token"
+        ],
+        "params": [
+            "email"
+        ]
+    },
+    {
+        "name": "Make Appointments",
+        "description": "Retreives gfghfkj",
+        "params": [
+            "email"
+        ],
+        "body": [
+            "token"
+        ]
+    }
+]
