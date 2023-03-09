@@ -1,13 +1,15 @@
 [
     {
         "name": "Get Appointments",
-        "description": "Retreives gfghfkj",
-        "query": [
-            "token"
+        "description": "Retrieves all appointments for a given authorization token.",
+        "headers": [
+            {
+                "Authorization": "Bearer {Token}"
+            } 
         ],
-        "params": [
-            "email"
-        ]
+        "response": {
+            "type": ""
+        }
     },
     {
         "name": "Make Appointments",
