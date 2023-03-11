@@ -8,7 +8,7 @@ export enum PARAMETERS {
     QUERY="Query",
     BODY="Body",
     PARAMETERS="Parameters",
-    HEADER="Header"
+    HEADER="Headers"
 }
 
 export enum METHODS {
