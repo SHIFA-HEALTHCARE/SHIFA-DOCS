@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Get Records",
+        "description": "Retreives gfghfkj",
+        "query": [
+            "token"
+        ],
+        "params": [
+            "email"
+        ]
+    },
+    {
+        "name": "Add Records",
+        "description": "Retreives gfghfkj",
+        "params": [
+            "email"
+        ],
+        "body": [
+            "token"
+        ]
+    }
+]

@@ -1,24 +1,59 @@
 [
+
     {
-        "name": "Get Appointments",
+        "name": "Add Appointments",
         "description": "Retrieves all appointments for a given authorization token.",
-        "headers": [
+   
+       "body":[
+        
             {
-                "Authorization": "Bearer {Token}"
-            } 
+                "name":"paymentId",
+                "type":"string",
+                "example":"1234",
+                "description":"this is a user "
+              } 
+              ,
+              {
+                "name":"amount",
+                "type":"string",
+                "example":200,
+                "description":"this is a user "
+              } 
+              ,
+              {
+                "name":"date",
+                "type":"Date",
+                "example":"2016-05-18T16:00:00Z",
+                "description":"this is a user "
+              } 
+              ,
+              {
+                "name":"senderEmail",
+                "type":"string",
+                "example":"l191049@gmail.com",
+                "description":"this is a user "
+              } 
+              ,
+              {
+                "name":"receiverEmail",
+                "type":"string",
+                "example":"l191045@gmail.com",
+                "description":"this is a user "
+              } 
+    
+       ],
+
+        "headers": [
+           {
+             "name":"Authorization",
+             "type":"string",
+             "example":"bearer {token}",
+             "description":"this is a user public key"
+           }
         ],
         "response": {
             "type": ""
         }
-    },
-    {
-        "name": "Make Appointments",
-        "description": "Retreives gfghfkj",
-        "params": [
-            "email"
-        ],
-        "body": [
-            "token"
-        ]
     }
+ 
 ]

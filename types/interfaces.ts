@@ -1,4 +1,4 @@
-import { METHODS } from "./enums"
+import { METHODS, PARAMETERS } from "./enums"
 
 export interface APIProperties {
     name: string
@@ -8,12 +8,24 @@ export interface APIProperties {
         type: Object
         status: 200 | 400 | 500
     }
-    query?: string | string[]
-    params?: string | string[]
-    body?: string | string[]
-    headers?: string | string[]
+    query?: APISchemaProps[]
+    params?: APISchemaProps[]
+    body?:APISchemaProps[]
+    headers?: APISchemaProps[]
 }
 
 export interface APIProps {
     apis: APIProperties[]
+}
+export interface APISchemaProps{
+    type:Object
+    description:string
+    example:string
+    name :string
+
+}
+export interface APIParameterProps{
+    name:PARAMETERS
+    params:APISchemaProps[]
+
 }
