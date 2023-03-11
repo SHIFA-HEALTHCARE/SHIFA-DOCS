@@ -1,7 +1,7 @@
 [
   {
     "name": "Add Appointments",
-    "description": "Retrieves all appointments for a given authorization token.",
+    "description": "Makes a new appointment using the given authorization token.",
     "body": [
       {
         "name": "paymentId",
@@ -46,6 +46,28 @@
       {
         "status": 200,
         "type": "Saved Appointment"
+      },
+      {
+        "status": 400,
+        "err": "Client Side Failure"
+      }
+    ]
+  },
+  {
+    "name": "Get Appointments",
+    "description": "Retrieves all appointments for the given authorization token.",
+    "headers": [
+      {
+        "name": "Authorization",
+        "type": "String",
+        "example": "bearer {token}",
+        "description": "this is a user public key"
+      }
+    ],
+    "responses": [
+      {
+        "status": 200,
+        "type": "Appointments"
       },
       {
         "status": 400,

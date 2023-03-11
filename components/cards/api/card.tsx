@@ -15,17 +15,18 @@ const users = require("../../../data/api/users.json");
 
 function APICard({ apis }: APIProps) {
 
-  const [apiVisibility, setApiVisibilty] = useState(false);
+  const [apiVisibility, setApiVisibilty] = useState(0);
   const [responseVisibility, setResponseVisibility] = useState(200);
 
   return (
     <div>
-      {apis.map((apis) => (
+      {apis.map((apis, index) => (
         <div key={apis.name}>
+          <button
+          onClick={() => { apiVisibility === index ? setApiVisibilty(-1) : setApiVisibilty(index) }} style={{ fontSize: "24px", marginTop: "20px" }}>{apis.name} <i className={apiVisibility === index ? styles.arrowUp : styles.arrowDown}></i>
+          </button>
 
-          <button onClick={() => setApiVisibilty(!apiVisibility)} style={{ fontSize: "28px", marginTop: "20px" }}>{apis.name} <i className={apiVisibility ? styles.arrowUp : styles.arrowDown}></i></button>
-
-          {apiVisibility &&
+          {apiVisibility === index &&
             <div style={{ marginTop: "20px" }}>
               <p style={{ marginBottom: "20px" }}>{apis.description}</p>
               {apis.params && (
@@ -44,16 +45,16 @@ function APICard({ apis }: APIProps) {
                 <div className={styles.statusHeaders}>
 
                   {apis.responses.map((response) => (
-                    <StatusButton status={response.status} visible={responseVisibility} setVisible={setResponseVisibility} />
+                    <StatusButton key={response.status} status={response.status} visible={responseVisibility} setVisible={setResponseVisibility} />
                   ))}
 
                 </div>
-                
-                <div style={{marginTop: "20px"}}>
-                {apis.responses.map((response) => (
-                    <StatusDescription status={response.status} visible={responseVisibility} type={response.type} err={response.err} setVisible={setResponseVisibility}/>
+
+                <div style={{ marginTop: "20px" }}>
+                  {apis.responses.map((response, index) => (
+                    <StatusDescription key={index} status={response.status} visible={responseVisibility} type={response.type} err={response.err} setVisible={setResponseVisibility} />
                   ))}
-                </div>              
+                </div>
 
               </div>
             </div>
