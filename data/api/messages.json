@@ -1,0 +1,163 @@
+[
+    {
+      "name": "Add Conversation",
+      "description": "Makes a new Conversation between patients and doctors using the given authorization token.",
+      "body": [
+    
+        {
+          "name": "userOne",
+          "type": "String",
+          "example": "l191049@gmail.com",
+          "description": "userOne is a patient email "
+        },
+        {
+          "name": "userTwo",
+          "type": "String",
+          "example": "l191045@gmail.com",
+          "description": "userTwo is a doctor/lab email "
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "type": "String",
+          "example": "bearer {token}",
+          "description": "Authorization is a user public key"
+        }
+      ],
+      "responses": [
+        {
+          "status": 200,
+          "type": "Saved Conversation"
+        },
+        {
+          "status": 400,
+          "err": "Client Side Failure"
+        },
+        {
+          "status": 502,
+          "err": "Duplicate Entry"
+        }
+      ]
+    }
+    ,
+    {
+      "name": "Get Conversation",
+      "description": "Reterive  Conversations between patients and doctors/lab technician using the given authorization token.",
+      "body": [
+    
+        {
+          "name": "email",
+          "type": "String",
+          "example": "l191049@gmail.com",
+          "description": "email is a patient/doctor/lab technician email "
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "type": "String",
+          "example": "bearer {token}",
+          "description": "Authorization is a user public key"
+        }
+      ],
+      "responses": [
+        {
+          "status": 200,
+          "type": "Conversation"
+        },
+        {
+          "status": 400,
+          "err": "Client Side Failure"
+        }
+       
+      ]
+    }
+    ,
+    {
+      "name": "Add Chats",
+      "description": "Makes a new Chat between patients and doctors using the given authorization token.",
+    
+      "body": [
+    
+        {
+          "name": "message",
+          "type": "String",
+          "example": "hi,umer here,how are you?",
+          "description": "message is a text that is required to discuss issue "
+        }
+        ,      {
+          "name": "iv",
+          "type": "String",
+          "example": "65536",
+          "description": "iv is a Random 16 bytes iv for encryption "
+        },
+        {
+          "name": "sentBy",
+          "type": "String",
+          "example": "l191045@gmail.com",
+          "description": "sentBy is a doctor/lab/patient email "
+        },
+         {
+          "name": "conversationId",
+          "type": "String",
+          "example": "1",
+          "description": "conversationId is a identifier which give emails of  conversation  between two users  "
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "type": "String",
+          "example": "bearer {token}",
+          "description": "Authorization is a user public key"
+        }
+      ],
+      "responses": [
+        {
+          "status": 200,
+          "type": "Saved Chats"
+        },
+        {
+          "status": 400,
+          "err": "Client Side Failure"
+        }
+       
+      ]
+    },
+    {
+      "name": "Get Chats",
+      "description": "Makes a new Chat between patients and doctors using the given authorization token.",
+    
+      "body": [
+    
+  
+         {
+          "name": "id",
+          "type": "String",
+          "example": "1",
+          "description": "id is a identifier which reterive chats  between two users  "
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "type": "String",
+          "example": "bearer {token}",
+          "description": "Authorization is a user public key"
+        }
+      ],
+      "responses": [
+        {
+          "status": 200,
+          "type": "Chats"
+        },
+        {
+          "status": 400,
+          "err": "Client Side Failure"
+        }
+       
+      ]
+    }
+ 
+  ]

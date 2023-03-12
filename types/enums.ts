@@ -2,7 +2,9 @@ export enum APIS {
     appointments = "appointments",
     records = "records",
     chats = "chats",
-    users="users"
+    users="users",
+    messages="messages",
+    models="models",
 }
 export enum PARAMETERS {
     QUERY="Query",
