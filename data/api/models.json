@@ -2,7 +2,7 @@
     {
         "name": "Diabetes",
         "description": "This model is used to predict that a person has a diabetes or not.",
-        "params": [
+        "query": [
           {
             "name": "pregnancies",
             "type": "int",
@@ -63,7 +63,7 @@
     {
         "name": "Heart",
         "description": "This model is used to predict that a person has a Heart issue or not.",
-        "params": [
+        "query": [
           {
             "name": "age",
             "type": "int",
@@ -149,7 +149,7 @@
         "name": "Liver",
         "description": "This model is used to predict that a person has a Liver issue or not.",
 
-        "params": [
+        "query": [
           {
             "name": "total-bilirubin",
             "type": "float",

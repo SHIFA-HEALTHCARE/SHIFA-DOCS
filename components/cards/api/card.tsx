@@ -45,6 +45,9 @@ function APICard({ apis }: APIProps) {
               {apis.params && (
                 <Parameters params={apis.params} name={PARAMETERS.PARAMETERS} />
               )}
+              {apis.query && (
+                <Parameters params={apis.query} name={PARAMETERS.QUERY} />
+              )}
               {apis.body && (
                 <Parameters params={apis.body} name={PARAMETERS.BODY} />
               )}

@@ -12,7 +12,7 @@
           {
             "name": "publicKey",
             "type": "String",
-            "example": "04566a0c74721fd1e2eaed4e331506c91c6a3d0e7b6b6b9f7ef6071763168f34a5bb87fc194c9bdf0",
+            "example": "04566a0c7472...",
 
             "description": "publicKey is a key which is shared with anyone "
           },
@@ -31,7 +31,7 @@
           {
             "name": "token",
             "type": "String",
-            "example": "47c8ffdef63500af2ad4bd9a56d7ba0dd34e4cc50c32eb4765843c1ee3eb2822",
+            "example": "47c8ffdef63500af2a...",
             "description": "token  is basically a identifier for a user "
           }
         ],
@@ -81,29 +81,7 @@
           }
         ]
       },
-      {
-        "name": "Login User",
-        "description": "User render to the messages page using the given authorization token.",
-  
-        "headers": [
-          {
-            "name": "Authorization",
-            "type": "String",
-            "example": "bearer {token}",
-            "description": "Authorization is a user public key"
-          }
-        ],
-        "responses": [
-          {
-            "status": 200,
-            "type": "Saved record"
-          },
-          {
-            "status": 400,
-            "err": "Client Side Failure"
-          }
-        ]
-      },
+
       {
         "name": "Valid User",
         "description": "Check User using email if present return its public key",
