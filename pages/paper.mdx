@@ -1,3 +1,80 @@
-# White Paper
+# Secure Medical Record Access and Viewing System
 
-Coming Soon!
+## Introduction
+This white paper presents a secure medical record access and viewing system that allows healthcare providers and patients to securely upload, store, and view medical records. The system employs state-of-the-art encryption techniques and secure access controls to ensure the confidentiality and privacy of sensitive medical information. This document outlines the step-by-step process for uploading, viewing, and securing medical records on the system.
+
+## Encryption and Security Measures
+To ensure the highest level of data security, the system makes use of the following encryption and security measures:
+
+1. Elliptic-curve Diffie–Hellman (ECDH): ECDH is used for secure key exchange between the uploader and the patient, establishing a shared secret key.
+
+2. Advanced Encryption Standard 256 (AES-256): AES-256, a widely recognized and secure encryption algorithm, is used to encrypt the internal JSON data. The shared secret key generated through ECDH is used for encryption and decryption operations.
+
+3. Secure Hash Algorithm 256 (SHA-256): SHA-256 is employed for hashing the patient's password and initialization vector (IV) to ensure the integrity and authenticity of stored passwords.
+
+## Uploader Side: Record Creation and Upload
+1. The uploader (e.g., a healthcare provider) creates a medical record in JSON format and encrypts it using AES-256 with the shared secret key obtained through ECDH.
+
+2. The encrypted JSON file is uploaded to the system, and the record's URL is stored as `www.blockstack/4cxzxcxz.json`. The `record.patientPassword` field is set to `null`, indicating that no patient-specific password is required to access the record.
+
+## Uploader Side: Record Viewing
+1. To view records uploaded by the uploader, the system fetches all records associated with the uploader's email.
+
+2. The system sends fetch requests to retrieve the encrypted internal JSON data from the record's URL.
+
+3. The encrypted data is decrypted using AES-256 and the shared secret key obtained through ECDH.
+
+4. The decrypted internal JSON data is dynamically converted into HTML for presentation.
+
+## Patient Side: Record Viewing
+If `record.patientPassword` is `null`:
+1. To view records associated with a patient, the system fetches all records associated with the patient's email.
+
+2. The system retrieves the encrypted internal JSON data from the record's URL using fetch requests.
+
+3. The encrypted data is decrypted using AES-256 and the shared secret key obtained through ECDH.
+
+4. The decrypted internal JSON data is dynamically converted into HTML for presentation.
+
+If `record.patientPassword` is not `null`:
+1. To view records associated with a patient, the system fetches all records associated with the patient's email.
+
+2. The system retrieves the encrypted internal JSON data from the record's URL using fetch requests.
+
+3. The system decrypts `record.rawPatientPassword` using the patient's private key to obtain the patient's password `patientPass` for display purpose.
+
+4. The encrypted internal JSON data is decrypted using AES-256 and the shared secret key obtained through ECDH.
+
+5. The decrypted internal JSON data is dynamically converted into HTML for presentation.
+
+## Patient Side: Password Set/Change
+If `record.patientPassword` is `null` or not `null` (existing password change scenario):
+1. The patient chooses a new password `patientPass`.
+
+2. The system stores the encrypted version of the patient's password using the patient's public key, ensuring only the patient can decrypt it using their private key.
+
+3. The system stores the encrypted shared key `Uploader/Patient Shared Key` using the patient's password `patientPass` for additional encryption.
+
+4. The system stores the hash of the patient's password `patientPass` with initialization vector (`record.iv`) as `record.patientPasswordHash` to verify the password during login.
+
+## Steps for Viewing Data without Login
+1. A user navigates to a specific URL (e.g., `localhost:3000/prescriptions/63de525c48a14ad794d77506`).
+
+2. The user enters the password `pass` associated with the record.
+
+3. The system sends a fetch request with `record._id = 63de525c48a14ad794d77506`.
+
+4. The system compares the hashed entered password `pass` with `record.patientPasswordHash` for authentication.
+
+5. If the password comparison is successful, the system returns the record's URL and the encrypted `record.internalPassword`.
+
+6. The system sends a fetch request to the record's URL and retrieves the encrypted internal JSON data.
+
+7. The system decrypts `record.internalPassword` using the entered password `pass` to obtain the shared key `Uploader/Patient Shared Key`.
+
+8. The encrypted internal JSON data is decrypted using AES-256 and the shared key to retrieve the original internal JSON data.
+
+9. The internal JSON data is dynamically converted into HTML for the user to view.
+
+## Conclusion
+The secure medical record access and viewing system outlined in this white paper provide a robust solution for uploading, storing, and viewing medical records while ensuring data confidentiality and privacy. By employing advanced encryption techniques such as ECDH, AES-256, and SHA-256, the system guarantees the secure transmission and storage of sensitive medical information. This system contributes to enhancing healthcare data security, enabling efficient and confidential sharing of medical records between healthcare providers and patients.
