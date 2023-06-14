@@ -18,7 +18,7 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/SHIFA-HEALTHCARE',
   },
-  darkMode: true,
+  darkMode: false,
   docsRepositoryBase: 'https://github.com/SHIFA-HEALTHCARE/SHIFA-DOCS',
   footer: {
     text: 'SHIFA LLC',
