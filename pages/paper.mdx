@@ -1,3 +1,6 @@
+import OnlineDiagram from '../components/paper/diagram/online'
+import OfflineDiagram from '../components/paper/diagram/offline'
+
 # Secure Medical Record Access and Viewing System
 
 ## Introduction
@@ -25,6 +28,8 @@ To ensure the highest level of data security, the system makes use of the follow
 3. The encrypted data is decrypted using AES-256 and the shared secret key obtained through ECDH.
 
 4. The decrypted internal JSON data is dynamically converted into HTML for presentation.
+
+<OnlineDiagram />
 
 ## Patient Side: Record Viewing
 If `record.patientPassword` is `null`:
@@ -75,6 +80,8 @@ If `record.patientPassword` is `null` or not `null` (existing password change sc
 8. The encrypted internal JSON data is decrypted using AES-256 and the shared key to retrieve the original internal JSON data.
 
 9. The internal JSON data is dynamically converted into HTML for the user to view.
+
+<OfflineDiagram />
 
 ## Conclusion
 The secure medical record access and viewing system outlined in this white paper provide a robust solution for uploading, storing, and viewing medical records while ensuring data confidentiality and privacy. By employing advanced encryption techniques such as ECDH, AES-256, and SHA-256, the system guarantees the secure transmission and storage of sensitive medical information. This system contributes to enhancing healthcare data security, enabling efficient and confidential sharing of medical records between healthcare providers and patients.
