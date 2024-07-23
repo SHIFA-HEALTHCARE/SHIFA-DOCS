@@ -8,19 +8,19 @@ function ProfileCard() {
   const [founders, setFounders] = useState([
     {
       "name": "Ummar Ikram",
-      "position": "Founder",
+      "position": "Project Lead",
       "image": "/ummar.jpg",
       "email": "ummarikram@gmail.com"
     },
     {
       "name": "M. Burhan",
-      "position": "Co-Founder",
+      "position": "Core Developer",
       "image": "/burhan.jpg",
       "email": "sheikhburhan055@gmail.com"
     },
     {
       "name": "Umar Farooq",
-      "position": "Co-Founder",
+      "position": "Core Developer",
       "image": "/umar.jpg",
       "email": "umarfaru288@gmail.com"
     }

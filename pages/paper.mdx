@@ -4,16 +4,16 @@ import OfflineDiagram from '../components/paper/diagram/offline'
 # Secure Medical Record Access and Viewing System
 
 ## Introduction
-This white paper presents a secure medical record access and viewing system that allows healthcare providers and patients to securely upload, store, and view medical records. The system employs state-of-the-art encryption techniques and secure access controls to ensure the confidentiality and privacy of sensitive medical information. This document outlines the step-by-step process for uploading, viewing, and securing medical records on the system.
+This white paper introduces a state-of-the-art system designed to securely manage medical record access and viewing. The system allows healthcare providers and patients to upload, store, and view medical records with the highest levels of data confidentiality and privacy. Through advanced encryption techniques and stringent access controls, the system ensures that sensitive medical information remains secure.
 
 ## Encryption and Security Measures
-To ensure the highest level of data security, the system makes use of the following encryption and security measures:
+To uphold the highest standards of data security, the system incorporates the following encryption and security measures:
 
-1. Elliptic-curve Diffie–Hellman (ECDH): ECDH is used for secure key exchange between the uploader and the patient, establishing a shared secret key.
+1. Elliptic-curve Diffie–Hellman (ECDH): ECDH is utilized for secure key exchange between the uploader and the patient, enabling the establishment of a shared secret key.
 
-2. Advanced Encryption Standard 256 (AES-256): AES-256, a widely recognized and secure encryption algorithm, is used to encrypt the internal JSON data. The shared secret key generated through ECDH is used for encryption and decryption operations.
+2. Advanced Encryption Standard 256 (AES-256): AES-256, a widely accepted and robust encryption algorithm, is employed to encrypt internal JSON data. The shared secret key generated via ECDH is used for both encryption and decryption operations.
 
-3. Secure Hash Algorithm 256 (SHA-256): SHA-256 is employed for hashing the patient's password and initialization vector (IV) to ensure the integrity and authenticity of stored passwords.
+3. Secure Hash Algorithm 256 (SHA-256): SHA-256 is used to hash the patient's password and initialization vector (IV), ensuring the integrity and authenticity of stored passwords.
 
 ## Uploader Side: Record Creation and Upload
 1. The uploader (e.g., a healthcare provider) creates a medical record in JSON format and encrypts it using AES-256 with the shared secret key obtained through ECDH.
@@ -84,4 +84,4 @@ If `record.patientPassword` is `null` or not `null` (existing password change sc
 <OfflineDiagram />
 
 ## Conclusion
-The secure medical record access and viewing system outlined in this white paper provide a robust solution for uploading, storing, and viewing medical records while ensuring data confidentiality and privacy. By employing advanced encryption techniques such as ECDH, AES-256, and SHA-256, the system guarantees the secure transmission and storage of sensitive medical information. This system contributes to enhancing healthcare data security, enabling efficient and confidential sharing of medical records between healthcare providers and patients.
+The Secure Medical Record Access and Viewing System offers a robust solution for the secure handling of medical records, ensuring both data confidentiality and privacy. By leveraging advanced encryption techniques such as ECDH, AES-256, and SHA-256, the system guarantees the safe transmission and storage of sensitive medical information. This system enhances healthcare data security, facilitating efficient and confidential sharing of medical records between providers and patients.

@@ -1,8 +1,7 @@
 {
   "index": "Introduction",
   "paper": "White Paper",
-  "modules": "Modules",
-  "apis": "API",
+  "srs": "Software Requirement Specification (SRS)",
   "documentation": {
     "title": "Explore Documentation",
     "href": "https://shifa.btc.us",
